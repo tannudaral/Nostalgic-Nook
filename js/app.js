@@ -3,7 +3,7 @@
  */
 (function ($) {
     // Main Object
-    var RESHOP = {};
+    var Nnook = {};
 
     // Predefined variables
     var
@@ -37,7 +37,7 @@
 
 
     // Bind Scroll Up to all pages
-    RESHOP.initScrollUp = function() {
+    Nnook.initScrollUp = function() {
         $.scrollUp({
             scrollName: 'topScroll',
             scrollText: '<i class="fas fa-long-arrow-alt-up"></i>',
@@ -48,7 +48,7 @@
         });
     };
 
-    RESHOP.initScrollSpy = function() {
+    Nnook.initScrollSpy = function() {
         var $bodyScrollSpy = $('#js-scrollspy-trigger');
         if ($bodyScrollSpy.length) {
             $bodyScrollSpy.scrollspy({
@@ -57,7 +57,7 @@
         }
     };
 
-    RESHOP.onClickScroll = function() {
+    Nnook.onClickScroll = function() {
         $collectionaClickScroll.on('click', function (e) {
             // prevent default behavior means page doesn't move or show up id's on browser status-bar
             e.preventDefault();
@@ -76,7 +76,7 @@
     };
 
     // Bind Tooltip to all pages
-    RESHOP.initTooltip = function() {
+    Nnook.initTooltip = function() {
 
         $('[data-tooltip="tooltip"]').tooltip({
             // The default value for trigger is 'hover focus',
@@ -87,7 +87,7 @@
     };
 
     // Bind Modals
-    RESHOP.initModal = function() {
+    Nnook.initModal = function() {
         // Check if these anchors are on page
         if ($collectionCartModalLink.length) {
             $collectionCartModalLink.on('click',function () {
@@ -105,7 +105,7 @@
     };
 
     // Default Billing Address
-    RESHOP.defaultAddressCheckbox = function() {
+    Nnook.defaultAddressCheckbox = function() {
         if ($defaultAddressCheckbox.length) {
             $defaultAddressCheckbox.change(function () {
                 if (this.checked) {
@@ -123,14 +123,14 @@
 
 
 
-    RESHOP.reshopNavigation = function() {
+    Nnook.NnookNavigation = function() {
         $('#navigation').shopNav();
         $('#navigation1').shopNav();
         $('#navigation2').shopNav();
         $('#navigation3').shopNav();
     };
 
-    RESHOP.onTabActiveRefreshSlider = function() {
+    Nnook.onTabActiveRefreshSlider = function() {
         // When showing a new tab, the events fire.
         // Specificity = 2
         $('.tab-list [data-toggle="tab"]').on('shown.bs.tab', function (e) {
@@ -142,7 +142,7 @@
     };
 
     // Bind all sliders into the page
-    RESHOP.primarySlider = function() {
+    Nnook.primarySlider = function() {
         if ($primarySlider.length) {
             $primarySlider.owlCarousel({
                 items: 1,
@@ -163,7 +163,7 @@
     };
 
     // Bind all sliders into the page
-    RESHOP.productSlider = function() {
+    Nnook.productSlider = function() {
         // 0 is falsy value, 1 is truthy
         if ($collectionProductSlider.length) {
             $collectionProductSlider.on('initialize.owl.carousel', function () {
@@ -202,7 +202,7 @@
 
 
     // Bind all sliders into the page
-    RESHOP.tabSlider = function() {
+    Nnook.tabSlider = function() {
         if ($collectionTabSlider.length) {
             $collectionTabSlider.on('initialize.owl.carousel', function () {
                 $(this).closest('.slider-fouc').removeAttr('class');
@@ -239,7 +239,7 @@
     };
 
     // Bind Brand slider
-    RESHOP.brandSlider = function() {
+    Nnook.brandSlider = function() {
         var $brandSlider = $('#brand-slider');
         // Check if brand slider on the page
         if ($brandSlider.length) {
@@ -275,7 +275,7 @@
     };
 
     // Testimonial Slider
-    RESHOP.testimonialSlider = function() {
+    Nnook.testimonialSlider = function() {
         // Check if Testimonial-Slider on the page
         if ($testimonialSlider.length) {
             $testimonialSlider.on('initialize.owl.carousel', function () {
@@ -292,13 +292,13 @@
         }
     };
     // Remove Class from body element
-    RESHOP.appConfiguration = function() {
+    Nnook.appConfiguration = function() {
         $('body').removeAttr('class');
         $('.preloader').removeClass('is-active');
     };
 
     // Bind isotope filter plugin
-    RESHOP.isotopeFilter = function() {
+    Nnook.isotopeFilter = function() {
 
         // Check if filter grid wrapper on the page
         if ($filterGridWrapper.length) {
@@ -326,7 +326,7 @@
     };
 
     // Bind countdown plugin
-    RESHOP.timerCountDown = function() {
+    Nnook.timerCountDown = function() {
         // Check if Count Down on the page
         if ($collectionCountDown.length) {
             $collectionCountDown.each(function () {
@@ -341,7 +341,7 @@
     };
 
     // Input Counter
-    RESHOP.initInputCounter = function() {
+    Nnook.initInputCounter = function() {
         // Check if Input Counters on the page
         if ($collectionInputCounter.length) {
             // Attach Click event to plus button
@@ -378,7 +378,7 @@
 
 
     // Blog Post Gallery
-    RESHOP.blogPostGallery = function() {
+    Nnook.blogPostGallery = function() {
         if ($collectionPostGallery.length) {
             $collectionPostGallery.on('initialize.owl.carousel', function () {
                 $(this).closest('.slider-fouc').removeAttr('class');
@@ -400,7 +400,7 @@
     };
 
     // Blog Post Masonry
-    RESHOP.blogPostMasonry = function() {
+    Nnook.blogPostMasonry = function() {
         if ($blogMasonry.length) {
             $blogMasonry.find('.blog-m-init').isotope({
                 itemSelector: '.blog-m__element',
@@ -410,7 +410,7 @@
     };
 
     // Blog Post Video
-    RESHOP.blogPostVideo = function() {
+    Nnook.blogPostVideo = function() {
         if ($collectionPostVideo.length) {
             $collectionPostVideo.on('click',function (e) {
                 e.preventDefault();
@@ -439,7 +439,7 @@
     };
 
     // Blog Post Embed Video
-    RESHOP.blogPostEmbedVideo = function() {
+    Nnook.blogPostEmbedVideo = function() {
         if ($collectionEmbedVideo.length) {
             $collectionEmbedVideo.parent().fitVids();
         }
@@ -449,7 +449,7 @@
 
 
     // Product Detail Init
-    RESHOP.productDetailInit = function() {
+    Nnook.productDetailInit = function() {
       if ($productDetailElement.length && $productDetailElementThumbnail.length) {
 
           var ELEVATE_ZOOM_OBJ = {
@@ -539,7 +539,7 @@
     };
 
     // Modal Product Detail Init
-    RESHOP.modalProductDetailInit = function() {
+    Nnook.modalProductDetailInit = function() {
         if ($modalProductDetailElement.length && $modalProductDetailElementThumbnail.length) {
             $modalProductDetailElement.slick({
                 slidesToShow: 1,
@@ -590,7 +590,7 @@
         }
     };
     // Shop Category Toggle Functionality
-    RESHOP.shopCategoryToggle = function() {
+    Nnook.shopCategoryToggle = function() {
         if ($shopCategoryToggleSpan.length) {
             $shopCategoryToggleSpan.on('click', function () {
                 $(this).toggleClass('is-expanded');
@@ -602,7 +602,7 @@
 
 
     // Shop Perspective Change
-    RESHOP.shopPerspectiveChange = function() {
+    Nnook.shopPerspectiveChange = function() {
           if ($shopGridBtn.length && $shopListBtn.length)   {
               $shopGridBtn.on('click',function () {
                   $(this).addClass('is-active');
@@ -619,7 +619,7 @@
           }
     };
     // Shop Side Filter Settings
-    RESHOP.shopSideFilter = function() {
+    Nnook.shopSideFilter = function() {
         if ($shopFilterBtn.length) {
             $shopFilterBtn.on('click',function () {
                 // Add Class Active
@@ -633,7 +633,7 @@
     };
 
     // Show Newsletter Modal
-    RESHOP.showNewsletterModal = function() {
+    Nnook.showNewsletterModal = function() {
         if ($('#newsletter-modal').length) {
             setTimeout(function () {
                 // Manually opens a modal
@@ -648,7 +648,7 @@
 
     // Check everything including DOM elements and images loaded
     $(window).on('load',function () {
-        RESHOP.showNewsletterModal();
+        Nnook.showNewsletterModal();
         if ($primarySlider.length) {
             // Play slider when everything is loaded
             $primarySlider.data('owl.carousel').options.autoplay = true;
@@ -657,30 +657,30 @@
     });
 
 
-        RESHOP.initScrollUp();
-        RESHOP.initTooltip();
-        RESHOP.initModal();
-        RESHOP.defaultAddressCheckbox();
-        RESHOP.initScrollSpy();
-        RESHOP.onClickScroll();
-        RESHOP.reshopNavigation();
-        RESHOP.primarySlider();
-        RESHOP.productSlider();
-        RESHOP.tabSlider();
-        RESHOP.onTabActiveRefreshSlider();
-        RESHOP.brandSlider();
-        RESHOP.testimonialSlider();
-        RESHOP.appConfiguration();
-        RESHOP.isotopeFilter();
-        RESHOP.timerCountDown();
-        RESHOP.initInputCounter();
-        RESHOP.blogPostGallery();
-        RESHOP.blogPostVideo();
-        RESHOP.blogPostEmbedVideo();
-        RESHOP.blogPostMasonry();
-        RESHOP.productDetailInit();
-        RESHOP.modalProductDetailInit();
-        RESHOP.shopCategoryToggle();
-        RESHOP.shopPerspectiveChange();
-        RESHOP.shopSideFilter();
+        Nnook.initScrollUp();
+        Nnook.initTooltip();
+        Nnook.initModal();
+        Nnook.defaultAddressCheckbox();
+        Nnook.initScrollSpy();
+        Nnook.onClickScroll();
+        Nnook.NnookNavigation();
+        Nnook.primarySlider();
+        Nnook.productSlider();
+        Nnook.tabSlider();
+        Nnook.onTabActiveRefreshSlider();
+        Nnook.brandSlider();
+        Nnook.testimonialSlider();
+        Nnook.appConfiguration();
+        Nnook.isotopeFilter();
+        Nnook.timerCountDown();
+        Nnook.initInputCounter();
+        Nnook.blogPostGallery();
+        Nnook.blogPostVideo();
+        Nnook.blogPostEmbedVideo();
+        Nnook.blogPostMasonry();
+        Nnook.productDetailInit();
+        Nnook.modalProductDetailInit();
+        Nnook.shopCategoryToggle();
+        Nnook.shopPerspectiveChange();
+        Nnook.shopSideFilter();
 })(jQuery);
